@@ -1,0 +1,3 @@
+[submodule "external/SwarmRL"]
+	path = external/SwarmRL
+	url = https://github.com/SwarmRL/SwarmRL
