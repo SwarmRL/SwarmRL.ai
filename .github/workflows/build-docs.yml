@@ -1,8 +1,9 @@
 name: Build and Deploy Docusaurus Site with Sphinx API Docs
 
 on:
-  repository_dispatch:
-    types: [update-docs]
+    push:
+    repository_dispatch:
+        types: [update-docs]
 
 jobs:
   build-deploy:
