@@ -3,3 +3,4 @@ mkdocstrings
 mkdocs-material
 pyyaml
 mkdocs-material-extensions
+mkdocstrings-python

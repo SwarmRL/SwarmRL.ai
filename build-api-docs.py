@@ -34,7 +34,7 @@ def update_mkdocs_nav(api_docs, mkdocs_config_file):
 
 # Path configurations
 package_name = 'swarmrl'  # Name of your SwarmRL package
-package_path = './SwarmRL'  # Path to the root of your SwarmRL package
+package_path = '../SwarmRL'  # Path to the root of your SwarmRL package
 docs_path = './docs/pages/api'    # Path where you want to save the Markdown files
 mkdocs_config_file = 'mkdocs.yml' # Path to your mkdocs.yml
 
