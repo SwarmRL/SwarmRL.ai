@@ -45,6 +45,9 @@ jobs:
 
     - name: Generate API Documentation
       run: |
+        cd SwarmRL
+        pip install -e .
+        cd ../
         cd SwarmRL-website
         cp mkdocs-template.yml mkdocs.yml
         python build-api-docs.py
