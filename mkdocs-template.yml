@@ -1,0 +1,34 @@
+edit_uri: blob/master/docs/
+markdown_extensions:
+- admonition
+- codehilite
+- toc:
+    permalink: true
+nav:
+- Home: pages/index.md
+- Introduction: pages/introduction.md
+- Installation: pages/installation.md
+- Getting Started: pages/getting_started.md
+plugins:
+- search
+- mkdocstrings:
+      handlers:
+        python:
+          paths: [../../SwarmRL]
+repo_name: SwarmRL/SwarmRL
+repo_url: https://github.com/SwarmRL/SwarmRL
+site_author: Your Name or Organization
+site_description: A detailed documentation of the SwarmRL project
+site_name: SwarmRL Documentation
+site_url: https://example.com
+theme:
+  favicon: assets/images/favicon.ico
+  features:
+  - navigation.tabs
+  - navigation.instant
+  - navigation.top
+  logo: assets/images/logo.jpg
+  name: material
+  palette:
+    accent: indigo
+    primary: indigo

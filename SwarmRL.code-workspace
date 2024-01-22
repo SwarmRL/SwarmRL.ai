@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "../SwarmRL"
+		},
+		{
+			"path": "."
+		}
+	],
+    "settings": {}
+}
