@@ -13,9 +13,9 @@ SwarmRL is a state-of-the-art reinforcement learning framework designed to empow
 
 Dive into the world of reinforcement learning with SwarmRL:
 
-- [Introduction](introduction.md): Learn more about what SwarmRL offers and its applications.
-- [Installation](installation.md): Get SwarmRL up and running on your machine.
-- [Quick Start](getting_started.md): Jump straight into using SwarmRL with these simple examples.
+- [Introduction](pages/introduction.md): Learn more about what SwarmRL offers and its applications.
+- [Installation](pages/installation.md): Get SwarmRL up and running on your machine.
+- [Quick Start](pages/getting_started.md): Jump straight into using SwarmRL with these simple examples.
 
 ## Contribute
 
