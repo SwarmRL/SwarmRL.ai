@@ -38,12 +38,14 @@ jobs:
 
     - name: Install Dependencies
       run: |
+        cd SwarmRL-website
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         # Include any other dependencies your Sphinx docs might need
 
     - name: Generate API Documentation
       run: |
+        cd SwarmRL-website
         cp mkdocs-template.yml mkdocs.yml
         python build-api-docs.py
         mkdocs build
