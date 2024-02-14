@@ -6,7 +6,7 @@ Getting started with SwarmRL is straightforward. Follow these steps to set up Sw
 
 Before installing SwarmRL, ensure you have the following prerequisites:
 
-- Python 3.6 or later.
+- Python 3.10 or later.
 - pip (Python package manager).
 
 ## Installation Steps
@@ -15,3 +15,4 @@ Before installing SwarmRL, ensure you have the following prerequisites:
    Use pip to install the latest version of SwarmRL:
    ```bash
    pip install swarmrl
+   ```

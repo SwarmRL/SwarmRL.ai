@@ -26,7 +26,5 @@ SwarmRL is an open-source project, and we welcome contributions from the communi
 Join our community and stay updated with the latest developments in SwarmRL:
 
 - GitHub: [SwarmRL/SwarmRL](https://github.com/SwarmRL/SwarmRL)
-- Community Forum: [Join the Discussion](https://community.swarmrl.example.com)
-- Social Media: [Follow us on Twitter](https://twitter.com/SwarmRL)
 
 We're excited to see what you'll build with SwarmRL!
