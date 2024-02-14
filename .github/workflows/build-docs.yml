@@ -13,7 +13,7 @@ jobs:
     - name: Checkout SwarmRL Website Repository
       uses: actions/checkout@v2
       with:
-        path: 'SwarmRL-website'
+        path: 'SwarmRL.ai'
 
     - name: Checkout SwarmRL Source Code
       uses: actions/checkout@v2
@@ -38,7 +38,7 @@ jobs:
 
     - name: Install Dependencies
       run: |
-        cd SwarmRL-website
+        cd SwarmRL.ai
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         # Include any other dependencies your Sphinx docs might need
@@ -48,7 +48,7 @@ jobs:
         cd SwarmRL
         pip install -e .
         cd ../
-        cd SwarmRL-website
+        cd SwarmRL.ai
         cp mkdocs-template.yml mkdocs.yml
         python build-api-docs.py
         mkdocs gh-deploy
@@ -57,4 +57,4 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./SwarmRL-website/build
+        publish_dir: ./SwarmRL.ai/
