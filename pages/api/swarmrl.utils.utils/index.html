@@ -1,0 +1,3223 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A detailed documentation of the SwarmRL project">
+      
+      
+        <meta name="author" content="Your Name or Organization">
+      
+      
+        <link rel="canonical" href="https://example.com/pages/api/swarmrl.utils.utils/">
+      
+      
+        <link rel="prev" href="../swarmrl.utils.colloid_utils/">
+      
+      
+        <link rel="next" href="../swarmrl.sampling_strategies.categorical_distribution/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
+    
+    
+      
+        <title>swarmrl.utils.utils - SwarmRL Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.f2e4d321.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#swarmrlutilsutils-module-api-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="SwarmRL Documentation" class="md-header__button md-logo" aria-label="SwarmRL Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/images/logo.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SwarmRL Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              swarmrl.utils.utils
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/SwarmRL/SwarmRL" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SwarmRL/SwarmRL
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../introduction/" class="md-tabs__link">
+        
+  
+    
+  
+  Introduction
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../installation/" class="md-tabs__link">
+        
+  
+    
+  
+  Installation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../getting_started/" class="md-tabs__link">
+        
+  
+    
+  
+  Getting Started
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../swarmrl.exploration_policies.exploration_policy/" class="md-tabs__link">
+          
+  
+  API Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="SwarmRL Documentation" class="md-nav__button md-logo" aria-label="SwarmRL Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/images/logo.jpg" alt="logo">
+
+    </a>
+    SwarmRL Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/SwarmRL/SwarmRL" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SwarmRL/SwarmRL
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    API Documentation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            API Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.exploration_policies.exploration_policy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.exploration_policies.exploration_policy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.exploration_policies.random_exploration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.exploration_policies.random_exploration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.components.swarm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.components.swarm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.components.colloid/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.components.colloid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.agents.dummy_models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.agents.dummy_models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.agents.classical_agent/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.agents.classical_agent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.agents.find_point/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.agents.find_point
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.agents.actor_critic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.agents.actor_critic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.agents.bechinger_models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.agents.bechinger_models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.agents.agent/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.agents.agent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.losses.loss/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.losses.loss
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.losses.proximal_policy_loss/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.losses.proximal_policy_loss
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.losses.policy_gradient_loss/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.losses.policy_gradient_loss
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.utils.colloid_utils/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.utils.colloid_utils
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    swarmrl.utils.utils
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.utils.utils
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils" class="md-nav__link">
+    <span class="md-ellipsis">
+      utils
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.calc_ellipsoid_friction_factors_rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      calc_ellipsoid_friction_factors_rotation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="calc_ellipsoid_friction_factors_rotation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.calc_ellipsoid_friction_factors_rotation--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.calc_ellipsoid_friction_factors_translation" class="md-nav__link">
+    <span class="md-ellipsis">
+      calc_ellipsoid_friction_factors_translation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="calc_ellipsoid_friction_factors_translation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.calc_ellipsoid_friction_factors_translation--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.calc_signed_angle_between_directors" class="md-nav__link">
+    <span class="md-ellipsis">
+      calc_signed_angle_between_directors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="calc_signed_angle_between_directors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.calc_signed_angle_between_directors--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.create_colloids" class="md-nav__link">
+    <span class="md-ellipsis">
+      create_colloids
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="create_colloids">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.create_colloids--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.create_colloids--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.gather_n_dim_indices" class="md-nav__link">
+    <span class="md-ellipsis">
+      gather_n_dim_indices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="gather_n_dim_indices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.gather_n_dim_indices--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.gather_n_dim_indices--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.record_trajectory" class="md-nav__link">
+    <span class="md-ellipsis">
+      record_trajectory
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="record_trajectory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.record_trajectory--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.record_trajectory--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.save_memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      save_memory
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="save_memory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.save_memory--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.save_memory--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.setup_sim_folder" class="md-nav__link">
+    <span class="md-ellipsis">
+      setup_sim_folder
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="setup_sim_folder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.setup_sim_folder--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.setup_swarmrl_logger" class="md-nav__link">
+    <span class="md-ellipsis">
+      setup_swarmrl_logger
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.write_params" class="md-nav__link">
+    <span class="md-ellipsis">
+      write_params
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="write_params">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.write_params--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.sampling_strategies.categorical_distribution/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.sampling_strategies.categorical_distribution
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.sampling_strategies.sampling_strategy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.sampling_strategies.sampling_strategy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.sampling_strategies.gumbel_distribution/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.sampling_strategies.gumbel_distribution
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.trainers.episodic_trainer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.trainers.episodic_trainer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.trainers.continuous_trainer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.trainers.continuous_trainer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.trainers.trainer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.trainers.trainer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.networks.flax_network/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.networks.flax_network
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.networks.network/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.networks.network
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.observables.director/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.observables.director
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.observables.observable/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.observables.observable
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.observables.multi_sensing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.observables.multi_sensing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.observables.particle_sensing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.observables.particle_sensing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.observables.concentration_field/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.observables.concentration_field
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.observables.position/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.observables.position
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.observables.subdivided_vision_cones/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.observables.subdivided_vision_cones
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.value_functions.expected_returns/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.value_functions.expected_returns
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.value_functions.generalized_advantage_estimate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.value_functions.generalized_advantage_estimate
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.actions.actions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.actions.actions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.engine.real_experiment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.engine.real_experiment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.engine.engine/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.engine.engine
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.engine.espresso/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.engine.espresso
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.training_routines.genetic_algorithm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.training_routines.genetic_algorithm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.training_routines.ensemble_submit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.training_routines.ensemble_submit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.force_functions.force_fn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.force_functions.force_fn
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.tasks.task/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.tasks.task
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.tasks.multi_tasking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.tasks.multi_tasking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.tasks.object_movement.rod_rotation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.tasks.object_movement.rod_rotation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.tasks.searching.species_search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.tasks.searching.species_search
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swarmrl.tasks.searching.gradient_sensing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swarmrl.tasks.searching.gradient_sensing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils" class="md-nav__link">
+    <span class="md-ellipsis">
+      utils
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.calc_ellipsoid_friction_factors_rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      calc_ellipsoid_friction_factors_rotation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="calc_ellipsoid_friction_factors_rotation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.calc_ellipsoid_friction_factors_rotation--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.calc_ellipsoid_friction_factors_translation" class="md-nav__link">
+    <span class="md-ellipsis">
+      calc_ellipsoid_friction_factors_translation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="calc_ellipsoid_friction_factors_translation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.calc_ellipsoid_friction_factors_translation--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.calc_signed_angle_between_directors" class="md-nav__link">
+    <span class="md-ellipsis">
+      calc_signed_angle_between_directors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="calc_signed_angle_between_directors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.calc_signed_angle_between_directors--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.create_colloids" class="md-nav__link">
+    <span class="md-ellipsis">
+      create_colloids
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="create_colloids">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.create_colloids--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.create_colloids--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.gather_n_dim_indices" class="md-nav__link">
+    <span class="md-ellipsis">
+      gather_n_dim_indices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="gather_n_dim_indices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.gather_n_dim_indices--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.gather_n_dim_indices--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.record_trajectory" class="md-nav__link">
+    <span class="md-ellipsis">
+      record_trajectory
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="record_trajectory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.record_trajectory--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.record_trajectory--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.save_memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      save_memory
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="save_memory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.save_memory--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.save_memory--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.setup_sim_folder" class="md-nav__link">
+    <span class="md-ellipsis">
+      setup_sim_folder
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="setup_sim_folder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.setup_sim_folder--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.setup_swarmrl_logger" class="md-nav__link">
+    <span class="md-ellipsis">
+      setup_swarmrl_logger
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.write_params" class="md-nav__link">
+    <span class="md-ellipsis">
+      write_params
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="write_params">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#swarmrl.utils.utils.write_params--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="swarmrlutilsutils-module-api-reference">swarmrl.utils.utils Module API Reference<a class="headerlink" href="#swarmrlutilsutils-module-api-reference" title="Permanent link">&para;</a></h1>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="swarmrl.utils.utils"></a>
+  <div class="doc doc-contents first">
+  
+      <p>Utils for the SwarmRL package.</p>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="swarmrl.utils.utils.calc_ellipsoid_friction_factors_rotation" class="doc doc-heading">
+          <code class=" language-python"><span class="n">calc_ellipsoid_friction_factors_rotation</span><span class="p">(</span><span class="n">axial_semiaxis</span><span class="p">,</span> <span class="n">equatorial_semiaxis</span><span class="p">,</span> <span class="n">dynamic_viscosity</span><span class="p">)</span></code>
+
+<a href="#swarmrl.utils.utils.calc_ellipsoid_friction_factors_rotation" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>https://en.wikipedia.org/wiki/Perrin_friction_factors</p>
+<h4 id="swarmrl.utils.utils.calc_ellipsoid_friction_factors_rotation--returns">Returns<a class="headerlink" href="#swarmrl.utils.utils.calc_ellipsoid_friction_factors_rotation--returns" title="Permanent link">&para;</a></h4>
+<p>gamma_ax, gamma_eq:
+    The friction factors for rotation around the axial (symmetry) axis
+    and for rotation around one of the equatorial axes</p>
+
+          <details class="quote">
+            <summary>Source code in <code>swarmrl/utils/utils.py</code></summary>
+            <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">429</span>
+<span class="normal">430</span>
+<span class="normal">431</span>
+<span class="normal">432</span>
+<span class="normal">433</span>
+<span class="normal">434</span>
+<span class="normal">435</span>
+<span class="normal">436</span>
+<span class="normal">437</span>
+<span class="normal">438</span>
+<span class="normal">439</span>
+<span class="normal">440</span>
+<span class="normal">441</span>
+<span class="normal">442</span>
+<span class="normal">443</span>
+<span class="normal">444</span>
+<span class="normal">445</span>
+<span class="normal">446</span>
+<span class="normal">447</span>
+<span class="normal">448</span>
+<span class="normal">449</span>
+<span class="normal">450</span>
+<span class="normal">451</span>
+<span class="normal">452</span>
+<span class="normal">453</span>
+<span class="normal">454</span>
+<span class="normal">455</span>
+<span class="normal">456</span>
+<span class="normal">457</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">calc_ellipsoid_friction_factors_rotation</span><span class="p">(</span>
+    <span class="n">axial_semiaxis</span><span class="p">,</span> <span class="n">equatorial_semiaxis</span><span class="p">,</span> <span class="n">dynamic_viscosity</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    https://en.wikipedia.org/wiki/Perrin_friction_factors</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+
+<span class="sd">    gamma_ax, gamma_eq:</span>
+<span class="sd">        The friction factors for rotation around the axial (symmetry) axis</span>
+<span class="sd">        and for rotation around one of the equatorial axes</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">axial_semiaxis</span> <span class="o">/</span> <span class="n">equatorial_semiaxis</span>
+    <span class="n">xi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">p</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="o">/</span> <span class="n">p</span>
+
+    <span class="k">if</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">S</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arctanh</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span> <span class="o">/</span> <span class="n">xi</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">S</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span> <span class="o">/</span> <span class="n">xi</span>
+
+    <span class="n">f_ax</span> <span class="o">=</span> <span class="mf">4.0</span> <span class="o">/</span> <span class="mf">3.0</span> <span class="o">*</span> <span class="p">(</span><span class="n">p</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">p</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">S</span><span class="p">)</span>
+    <span class="n">f_eq</span> <span class="o">=</span> <span class="mf">4.0</span> <span class="o">/</span> <span class="mf">3.0</span> <span class="o">*</span> <span class="p">(</span><span class="n">p</span><span class="o">**-</span><span class="mi">2</span> <span class="o">-</span> <span class="n">p</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">-</span> <span class="n">S</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span> <span class="o">-</span> <span class="n">p</span><span class="o">**-</span><span class="mi">2</span><span class="p">))</span>
+
+    <span class="n">gamma_sphere</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="mi">8</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">dynamic_viscosity</span> <span class="o">*</span> <span class="n">axial_semiaxis</span> <span class="o">*</span> <span class="n">equatorial_semiaxis</span><span class="o">**</span><span class="mi">2</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">gamma_sphere</span> <span class="o">*</span> <span class="n">f_ax</span><span class="p">,</span> <span class="n">gamma_sphere</span> <span class="o">*</span> <span class="n">f_eq</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="swarmrl.utils.utils.calc_ellipsoid_friction_factors_translation" class="doc doc-heading">
+          <code class=" language-python"><span class="n">calc_ellipsoid_friction_factors_translation</span><span class="p">(</span><span class="n">axial_semiaxis</span><span class="p">,</span> <span class="n">equatorial_semiaxis</span><span class="p">,</span> <span class="n">dynamic_viscosity</span><span class="p">)</span></code>
+
+<a href="#swarmrl.utils.utils.calc_ellipsoid_friction_factors_translation" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>https://link.springer.com/article/10.1007/BF02838005</p>
+<h4 id="swarmrl.utils.utils.calc_ellipsoid_friction_factors_translation--returns">Returns<a class="headerlink" href="#swarmrl.utils.utils.calc_ellipsoid_friction_factors_translation--returns" title="Permanent link">&para;</a></h4>
+<p>gamma_ax, gamma_eq
+    The friction coefficient for dragging the ellipsoid along its symmetry axis
+    and along one of the equatorial axes</p>
+
+          <details class="quote">
+            <summary>Source code in <code>swarmrl/utils/utils.py</code></summary>
+            <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">380</span>
+<span class="normal">381</span>
+<span class="normal">382</span>
+<span class="normal">383</span>
+<span class="normal">384</span>
+<span class="normal">385</span>
+<span class="normal">386</span>
+<span class="normal">387</span>
+<span class="normal">388</span>
+<span class="normal">389</span>
+<span class="normal">390</span>
+<span class="normal">391</span>
+<span class="normal">392</span>
+<span class="normal">393</span>
+<span class="normal">394</span>
+<span class="normal">395</span>
+<span class="normal">396</span>
+<span class="normal">397</span>
+<span class="normal">398</span>
+<span class="normal">399</span>
+<span class="normal">400</span>
+<span class="normal">401</span>
+<span class="normal">402</span>
+<span class="normal">403</span>
+<span class="normal">404</span>
+<span class="normal">405</span>
+<span class="normal">406</span>
+<span class="normal">407</span>
+<span class="normal">408</span>
+<span class="normal">409</span>
+<span class="normal">410</span>
+<span class="normal">411</span>
+<span class="normal">412</span>
+<span class="normal">413</span>
+<span class="normal">414</span>
+<span class="normal">415</span>
+<span class="normal">416</span>
+<span class="normal">417</span>
+<span class="normal">418</span>
+<span class="normal">419</span>
+<span class="normal">420</span>
+<span class="normal">421</span>
+<span class="normal">422</span>
+<span class="normal">423</span>
+<span class="normal">424</span>
+<span class="normal">425</span>
+<span class="normal">426</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">calc_ellipsoid_friction_factors_translation</span><span class="p">(</span>
+    <span class="n">axial_semiaxis</span><span class="p">,</span> <span class="n">equatorial_semiaxis</span><span class="p">,</span> <span class="n">dynamic_viscosity</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    https://link.springer.com/article/10.1007/BF02838005</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+
+<span class="sd">    gamma_ax, gamma_eq</span>
+<span class="sd">        The friction coefficient for dragging the ellipsoid along its symmetry axis</span>
+<span class="sd">        and along one of the equatorial axes</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">axial_semiaxis</span> <span class="o">&gt;</span> <span class="n">equatorial_semiaxis</span><span class="p">:</span>
+        <span class="c1"># prolate spheroid</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">axial_semiaxis</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">equatorial_semiaxis</span>
+        <span class="n">e</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">b</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">ll</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="n">e</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">e</span><span class="p">))</span>
+        <span class="n">gamma_ax</span> <span class="o">=</span> <span class="mi">16</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">dynamic_viscosity</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">e</span><span class="o">**</span><span class="mi">3</span> <span class="o">/</span> <span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="n">e</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">ll</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">e</span><span class="p">)</span>
+        <span class="n">gamma_eq</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="mi">32</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">dynamic_viscosity</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">e</span><span class="o">**</span><span class="mi">3</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">e</span> <span class="o">+</span> <span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">e</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">ll</span><span class="p">)</span>
+        <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># oblate spheroid</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">axial_semiaxis</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">equatorial_semiaxis</span>
+        <span class="n">e</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">b</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">gamma_ax</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="mi">8</span>
+            <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+            <span class="o">*</span> <span class="n">dynamic_viscosity</span>
+            <span class="o">*</span> <span class="n">a</span>
+            <span class="o">*</span> <span class="n">e</span><span class="o">**</span><span class="mi">3</span>
+            <span class="o">/</span> <span class="p">(</span><span class="n">e</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">e</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">e</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arcsin</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+        <span class="p">)</span>
+        <span class="n">gamma_eq</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="mi">16</span>
+            <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+            <span class="o">*</span> <span class="n">dynamic_viscosity</span>
+            <span class="o">*</span> <span class="n">a</span>
+            <span class="o">*</span> <span class="n">e</span><span class="o">**</span><span class="mi">3</span>
+            <span class="o">/</span> <span class="p">(</span><span class="o">-</span><span class="n">e</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">e</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">e</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arcsin</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+        <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">gamma_ax</span><span class="p">,</span> <span class="n">gamma_eq</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="swarmrl.utils.utils.calc_signed_angle_between_directors" class="doc doc-heading">
+          <code class=" language-python"><span class="n">calc_signed_angle_between_directors</span><span class="p">(</span><span class="n">my_director</span><span class="p">,</span> <span class="n">other_director</span><span class="p">)</span></code>
+
+<a href="#swarmrl.utils.utils.calc_signed_angle_between_directors" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>In 2D compare two different normalized
+directors to determine the angle between them</p>
+<h4 id="swarmrl.utils.utils.calc_signed_angle_between_directors--parameters">Parameters<a class="headerlink" href="#swarmrl.utils.utils.calc_signed_angle_between_directors--parameters" title="Permanent link">&para;</a></h4>
+<p>my_director : np.ndarray
+        Normalized director in 3D.
+other_director : np.ndarray
+        Normalized director in 3D.
+Returns</p>
+<hr />
+<p>signed_angle : float
+    signed float which represents the signed angle of my_director to other_director
+    with the mathematical sign convention.</p>
+
+          <details class="quote">
+            <summary>Source code in <code>swarmrl/utils/utils.py</code></summary>
+            <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">297</span>
+<span class="normal">298</span>
+<span class="normal">299</span>
+<span class="normal">300</span>
+<span class="normal">301</span>
+<span class="normal">302</span>
+<span class="normal">303</span>
+<span class="normal">304</span>
+<span class="normal">305</span>
+<span class="normal">306</span>
+<span class="normal">307</span>
+<span class="normal">308</span>
+<span class="normal">309</span>
+<span class="normal">310</span>
+<span class="normal">311</span>
+<span class="normal">312</span>
+<span class="normal">313</span>
+<span class="normal">314</span>
+<span class="normal">315</span>
+<span class="normal">316</span>
+<span class="normal">317</span>
+<span class="normal">318</span>
+<span class="normal">319</span>
+<span class="normal">320</span>
+<span class="normal">321</span>
+<span class="normal">322</span>
+<span class="normal">323</span>
+<span class="normal">324</span>
+<span class="normal">325</span>
+<span class="normal">326</span>
+<span class="normal">327</span>
+<span class="normal">328</span>
+<span class="normal">329</span>
+<span class="normal">330</span>
+<span class="normal">331</span>
+<span class="normal">332</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">calc_signed_angle_between_directors</span><span class="p">(</span>
+    <span class="n">my_director</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">other_director</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    In 2D compare two different normalized</span>
+<span class="sd">    directors to determine the angle between them</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    my_director : np.ndarray</span>
+<span class="sd">            Normalized director in 3D.</span>
+<span class="sd">    other_director : np.ndarray</span>
+<span class="sd">            Normalized director in 3D.</span>
+<span class="sd">    Returns</span>
+<span class="sd">    ----------</span>
+<span class="sd">    signed_angle : float</span>
+<span class="sd">        signed float which represents the signed angle of my_director to other_director</span>
+<span class="sd">        with the mathematical sign convention.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Assert if the directors were really normalized</span>
+    <span class="n">my_director</span> <span class="o">/=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">my_director</span><span class="p">)</span>
+    <span class="n">other_director</span> <span class="o">/=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">other_director</span><span class="p">)</span>
+
+    <span class="c1"># calculate the angle in which the my_colloid is looking</span>
+    <span class="n">angle</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">arccos</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">other_director</span><span class="p">,</span> <span class="n">my_director</span><span class="p">),</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+    <span class="c1"># use the director in orthogonal direction to determine sign</span>
+    <span class="n">orthogonal_dot</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span>
+        <span class="n">other_director</span><span class="p">,</span>
+        <span class="n">jnp</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="n">my_director</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">my_director</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">my_director</span><span class="p">[</span><span class="mi">2</span><span class="p">]]),</span>
+    <span class="p">)</span>
+    <span class="c1"># don&#39;t use np.sign instead use np.where because</span>
+    <span class="c1"># np.sign(0) =&gt; 0 is not what we want</span>
+    <span class="n">angle</span> <span class="o">*=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">orthogonal_dot</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">angle</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="swarmrl.utils.utils.create_colloids" class="doc doc-heading">
+          <code class=" language-python"><span class="n">create_colloids</span><span class="p">(</span><span class="n">n_cols</span><span class="p">,</span> <span class="n">type_</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">0</span><span class="p">]),</span> <span class="n">dist</span><span class="o">=</span><span class="mf">200.0</span><span class="p">,</span> <span class="n">face_middle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+
+<a href="#swarmrl.utils.utils.create_colloids" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Create a number of colloids in a circle around the center of the box.
+This method is primarily used for writing tests. It is not used in the
+actual simulation. The colloids are created in a circle around the center
+of the box.</p>
+<h4 id="swarmrl.utils.utils.create_colloids--parameters">Parameters<a class="headerlink" href="#swarmrl.utils.utils.create_colloids--parameters" title="Permanent link">&para;</a></h4>
+<p>n_cols : int
+        Number of colloids to create.
+type_ : int, optional
+        Type of the colloids to create.
+center : np.ndarray, optional
+        Center of the circle in which the colloids are created.
+dist : float, optional
+        Distance of the colloids to the center.
+face_middle : bool, optional
+        If True, the colloids face the center of the circle.</p>
+<h4 id="swarmrl.utils.utils.create_colloids--returns">Returns<a class="headerlink" href="#swarmrl.utils.utils.create_colloids--returns" title="Permanent link">&para;</a></h4>
+<p>colloids : list(Colloid)
+        List of colloid.</p>
+
+          <details class="quote">
+            <summary>Source code in <code>swarmrl/utils/utils.py</code></summary>
+            <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">335</span>
+<span class="normal">336</span>
+<span class="normal">337</span>
+<span class="normal">338</span>
+<span class="normal">339</span>
+<span class="normal">340</span>
+<span class="normal">341</span>
+<span class="normal">342</span>
+<span class="normal">343</span>
+<span class="normal">344</span>
+<span class="normal">345</span>
+<span class="normal">346</span>
+<span class="normal">347</span>
+<span class="normal">348</span>
+<span class="normal">349</span>
+<span class="normal">350</span>
+<span class="normal">351</span>
+<span class="normal">352</span>
+<span class="normal">353</span>
+<span class="normal">354</span>
+<span class="normal">355</span>
+<span class="normal">356</span>
+<span class="normal">357</span>
+<span class="normal">358</span>
+<span class="normal">359</span>
+<span class="normal">360</span>
+<span class="normal">361</span>
+<span class="normal">362</span>
+<span class="normal">363</span>
+<span class="normal">364</span>
+<span class="normal">365</span>
+<span class="normal">366</span>
+<span class="normal">367</span>
+<span class="normal">368</span>
+<span class="normal">369</span>
+<span class="normal">370</span>
+<span class="normal">371</span>
+<span class="normal">372</span>
+<span class="normal">373</span>
+<span class="normal">374</span>
+<span class="normal">375</span>
+<span class="normal">376</span>
+<span class="normal">377</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">create_colloids</span><span class="p">(</span>
+    <span class="n">n_cols</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">type_</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="n">center</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">0</span><span class="p">]),</span>
+    <span class="n">dist</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">200.0</span><span class="p">,</span>
+    <span class="n">face_middle</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Create a number of colloids in a circle around the center of the box.</span>
+<span class="sd">    This method is primarily used for writing tests. It is not used in the</span>
+<span class="sd">    actual simulation. The colloids are created in a circle around the center</span>
+<span class="sd">    of the box.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    n_cols : int</span>
+<span class="sd">            Number of colloids to create.</span>
+<span class="sd">    type_ : int, optional</span>
+<span class="sd">            Type of the colloids to create.</span>
+<span class="sd">    center : np.ndarray, optional</span>
+<span class="sd">            Center of the circle in which the colloids are created.</span>
+<span class="sd">    dist : float, optional</span>
+<span class="sd">            Distance of the colloids to the center.</span>
+<span class="sd">    face_middle : bool, optional</span>
+<span class="sd">            If True, the colloids face the center of the circle.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    colloids : list(Colloid)</span>
+<span class="sd">            List of colloid.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">cols</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_cols</span><span class="p">):</span>
+        <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+        <span class="n">position</span> <span class="o">=</span> <span class="n">center</span> <span class="o">+</span> <span class="n">dist</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="mi">0</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">face_middle</span><span class="p">:</span>
+            <span class="n">direction</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">center</span> <span class="o">-</span> <span class="n">position</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">direction</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+        <span class="n">direction</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">direction</span> <span class="o">=</span> <span class="n">direction</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">direction</span><span class="p">)</span>
+        <span class="n">cols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Colloid</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="n">position</span><span class="p">,</span> <span class="n">director</span><span class="o">=</span><span class="n">direction</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">type_</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="n">i</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">cols</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="swarmrl.utils.utils.gather_n_dim_indices" class="doc doc-heading">
+          <code class=" language-python"><span class="n">gather_n_dim_indices</span><span class="p">(</span><span class="n">reference_array</span><span class="p">,</span> <span class="n">indices</span><span class="p">)</span></code>
+
+<a href="#swarmrl.utils.utils.gather_n_dim_indices" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Gather entries from an n_dim array using an n_dim index array</p>
+<h4 id="swarmrl.utils.utils.gather_n_dim_indices--parameters">Parameters<a class="headerlink" href="#swarmrl.utils.utils.gather_n_dim_indices--parameters" title="Permanent link">&para;</a></h4>
+<p>reference_array : np.ndarray
+        Array that you want to gather the indices of.
+indices : np.ndarray
+        Indices in the same shape as the array without the last dimension.</p>
+<h4 id="swarmrl.utils.utils.gather_n_dim_indices--returns">Returns<a class="headerlink" href="#swarmrl.utils.utils.gather_n_dim_indices--returns" title="Permanent link">&para;</a></h4>
+<p>reduced_array : np.ndarray
+        Shape is the reference array with the last dimension reduced to 1.
+        This array is the initial reference array with the desired indices chosen
+        out.</p>
+
+          <details class="quote">
+            <summary>Source code in <code>swarmrl/utils/utils.py</code></summary>
+            <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">gather_n_dim_indices</span><span class="p">(</span><span class="n">reference_array</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">indices</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Gather entries from an n_dim array using an n_dim index array</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    reference_array : np.ndarray</span>
+<span class="sd">            Array that you want to gather the indices of.</span>
+<span class="sd">    indices : np.ndarray</span>
+<span class="sd">            Indices in the same shape as the array without the last dimension.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    reduced_array : np.ndarray</span>
+<span class="sd">            Shape is the reference array with the last dimension reduced to 1.</span>
+<span class="sd">            This array is the initial reference array with the desired indices chosen</span>
+<span class="sd">            out.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">indices</span> <span class="o">=</span> <span class="n">indices</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">reference_shape</span> <span class="o">=</span> <span class="n">reference_array</span><span class="o">.</span><span class="n">shape</span>
+
+    <span class="n">multiplier</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">indices</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">indices</span><span class="o">.</span><span class="n">flatten</span><span class="p">()),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+        <span class="o">*</span> <span class="n">reference_shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="n">indices</span> <span class="o">=</span> <span class="n">indices</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span> <span class="o">+</span> <span class="n">multiplier</span>
+
+    <span class="n">gathered_array</span> <span class="o">=</span> <span class="n">reference_array</span><span class="o">.</span><span class="n">flatten</span><span class="p">()[</span><span class="n">indices</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">gathered_array</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">reference_shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">reference_shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="swarmrl.utils.utils.record_trajectory" class="doc doc-heading">
+          <code class=" language-python"><span class="n">record_trajectory</span><span class="p">(</span><span class="n">particle_type</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">actions</span><span class="p">,</span> <span class="n">log_probs</span><span class="p">,</span> <span class="n">rewards</span><span class="p">)</span></code>
+
+<a href="#swarmrl.utils.utils.record_trajectory" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Record trajectory if required.</p>
+<h4 id="swarmrl.utils.utils.record_trajectory--parameters">Parameters<a class="headerlink" href="#swarmrl.utils.utils.record_trajectory--parameters" title="Permanent link">&para;</a></h4>
+<p>particle_type : str
+        Type of the particle saved. Important for the multi-species training.
+rewards : np.ndarray (n_timesteps, n_particles, 1)
+        Rewards collected during the simulation to be used in training.
+log_probs : np.ndarray (n_timesteps, n_particles, 1)
+        log_probs used for debugging.
+features : np.ndarray (n_timesteps, n_particles, n_dimensions)
+        Features to store in the array.
+actions : np.ndarray (n_timesteps, n_particles, 1)
+        A numpy array of actions</p>
+<h4 id="swarmrl.utils.utils.record_trajectory--returns">Returns<a class="headerlink" href="#swarmrl.utils.utils.record_trajectory--returns" title="Permanent link">&para;</a></h4>
+<p>Dumps a hidden file to disc which is often removed after reading.</p>
+
+          <details class="quote">
+            <summary>Source code in <code>swarmrl/utils/utils.py</code></summary>
+            <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">record_trajectory</span><span class="p">(</span>
+    <span class="n">particle_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">features</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">actions</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">log_probs</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">rewards</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Record trajectory if required.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    particle_type : str</span>
+<span class="sd">            Type of the particle saved. Important for the multi-species training.</span>
+<span class="sd">    rewards : np.ndarray (n_timesteps, n_particles, 1)</span>
+<span class="sd">            Rewards collected during the simulation to be used in training.</span>
+<span class="sd">    log_probs : np.ndarray (n_timesteps, n_particles, 1)</span>
+<span class="sd">            log_probs used for debugging.</span>
+<span class="sd">    features : np.ndarray (n_timesteps, n_particles, n_dimensions)</span>
+<span class="sd">            Features to store in the array.</span>
+<span class="sd">    actions : np.ndarray (n_timesteps, n_particles, 1)</span>
+<span class="sd">            A numpy array of actions</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Dumps a hidden file to disc which is often removed after reading.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;.traj_data_</span><span class="si">{</span><span class="n">particle_type</span><span class="si">}</span><span class="s2">.npy&quot;</span><span class="p">,</span> <span class="n">allow_pickle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">feature_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;features&quot;</span><span class="p">)</span>
+        <span class="n">action_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;actions&quot;</span><span class="p">)</span>
+        <span class="n">log_probs_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;log_probs&quot;</span><span class="p">)</span>
+        <span class="n">reward_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;rewards&quot;</span><span class="p">)</span>
+
+        <span class="n">feature_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">feature_data</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">features</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">action_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">action_data</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">actions</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">log_probs_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">log_probs_data</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">log_probs</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">reward_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">reward_data</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">rewards</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;.traj_data_</span><span class="si">{</span><span class="n">particle_type</span><span class="si">}</span><span class="s2">.npy&quot;</span><span class="p">)</span>
+
+    <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+        <span class="n">feature_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">features</span><span class="p">])</span>
+        <span class="n">action_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">actions</span><span class="p">])</span>
+        <span class="n">log_probs_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">log_probs</span><span class="p">])</span>
+        <span class="n">reward_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">rewards</span><span class="p">])</span>
+
+    <span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;.traj_data_</span><span class="si">{</span><span class="n">particle_type</span><span class="si">}</span><span class="s2">.npy&quot;</span><span class="p">,</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;features&quot;</span><span class="p">:</span> <span class="n">feature_data</span><span class="p">,</span>
+            <span class="s2">&quot;actions&quot;</span><span class="p">:</span> <span class="n">action_data</span><span class="p">,</span>
+            <span class="s2">&quot;log_probs&quot;</span><span class="p">:</span> <span class="n">log_probs_data</span><span class="p">,</span>
+            <span class="s2">&quot;rewards&quot;</span><span class="p">:</span> <span class="n">reward_data</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="n">allow_pickle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="swarmrl.utils.utils.save_memory" class="doc doc-heading">
+          <code class=" language-python"><span class="n">save_memory</span><span class="p">(</span><span class="n">memory</span><span class="p">)</span></code>
+
+<a href="#swarmrl.utils.utils.save_memory" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Records the training data if required.</p>
+<h4 id="swarmrl.utils.utils.save_memory--parameters">Parameters:<a class="headerlink" href="#swarmrl.utils.utils.save_memory--parameters" title="Permanent link">&para;</a></h4>
+<p>memory : a dictionary containing the data from the method where it is called from.
+    The data is specified in the method.
+    It has to contain a key "file_name" which is the name of the file to be saved.
+    To handle multiple particle types: one can specify the file name in the
+    initialisation of the method.</p>
+<h4 id="swarmrl.utils.utils.save_memory--returns">Returns<a class="headerlink" href="#swarmrl.utils.utils.save_memory--returns" title="Permanent link">&para;</a></h4>
+<p>Dumps a  file to disc to evaluate training.</p>
+
+          <details class="quote">
+            <summary>Source code in <code>swarmrl/utils/utils.py</code></summary>
+            <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">267</span>
+<span class="normal">268</span>
+<span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span>
+<span class="normal">272</span>
+<span class="normal">273</span>
+<span class="normal">274</span>
+<span class="normal">275</span>
+<span class="normal">276</span>
+<span class="normal">277</span>
+<span class="normal">278</span>
+<span class="normal">279</span>
+<span class="normal">280</span>
+<span class="normal">281</span>
+<span class="normal">282</span>
+<span class="normal">283</span>
+<span class="normal">284</span>
+<span class="normal">285</span>
+<span class="normal">286</span>
+<span class="normal">287</span>
+<span class="normal">288</span>
+<span class="normal">289</span>
+<span class="normal">290</span>
+<span class="normal">291</span>
+<span class="normal">292</span>
+<span class="normal">293</span>
+<span class="normal">294</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">save_memory</span><span class="p">(</span><span class="n">memory</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Records the training data if required.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    ----------</span>
+<span class="sd">    memory : a dictionary containing the data from the method where it is called from.</span>
+<span class="sd">        The data is specified in the method.</span>
+<span class="sd">        It has to contain a key &quot;file_name&quot; which is the name of the file to be saved.</span>
+<span class="sd">        To handle multiple particle types: one can specify the file name in the</span>
+<span class="sd">        initialisation of the method.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Dumps a  file to disc to evaluate training.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">empty_memory</span> <span class="o">=</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="p">[]</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">memory</span><span class="o">.</span><span class="n">keys</span><span class="p">()}</span>
+    <span class="n">empty_memory</span><span class="p">[</span><span class="s2">&quot;file_name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">memory</span><span class="p">[</span><span class="s2">&quot;file_name&quot;</span><span class="p">]</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">reloaded_dict</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">memory</span><span class="p">[</span><span class="s2">&quot;file_name&quot;</span><span class="p">],</span> <span class="n">allow_pickle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">reloaded_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">reloaded_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">memory</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">memory</span><span class="p">[</span><span class="s2">&quot;file_name&quot;</span><span class="p">],</span> <span class="n">reloaded_dict</span><span class="p">,</span> <span class="n">allow_pickle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">empty_memory</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">empty_memory</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">memory</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">memory</span><span class="p">[</span><span class="s2">&quot;file_name&quot;</span><span class="p">],</span> <span class="n">empty_memory</span><span class="p">,</span> <span class="n">allow_pickle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">empty_memory</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="swarmrl.utils.utils.setup_sim_folder" class="doc doc-heading">
+          <code class=" language-python"><span class="n">setup_sim_folder</span><span class="p">(</span><span class="n">outfolder_base</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">ask_if_exists</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">delete_existing</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+<a href="#swarmrl.utils.utils.setup_sim_folder" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Create a simulation folder.
+Depending on flags, delete previous folders of the same name
+Parameters</p>
+<hr />
+<p>outfolder_base
+    Folder in which to create the new simulation folder
+name
+    Name of the new folder
+ask_if_exists
+    Flag to determine if the program stops to await user input on
+    how to handle if the folder already exists (true, default)
+    or to just delete it (false)
+delete_existing
+    Whether to delete the existing folder</p>
+<h4 id="swarmrl.utils.utils.setup_sim_folder--returns">Returns<a class="headerlink" href="#swarmrl.utils.utils.setup_sim_folder--returns" title="Permanent link">&para;</a></h4>
+
+          <details class="quote">
+            <summary>Source code in <code>swarmrl/utils/utils.py</code></summary>
+            <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">setup_sim_folder</span><span class="p">(</span>
+    <span class="n">outfolder_base</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">ask_if_exists</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">delete_existing</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Create a simulation folder.</span>
+<span class="sd">    Depending on flags, delete previous folders of the same name</span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    outfolder_base</span>
+<span class="sd">        Folder in which to create the new simulation folder</span>
+<span class="sd">    name</span>
+<span class="sd">        Name of the new folder</span>
+<span class="sd">    ask_if_exists</span>
+<span class="sd">        Flag to determine if the program stops to await user input on</span>
+<span class="sd">        how to handle if the folder already exists (true, default)</span>
+<span class="sd">        or to just delete it (false)</span>
+<span class="sd">    delete_existing</span>
+<span class="sd">        Whether to delete the existing folder</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">folder_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">outfolder_base</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">folder_name</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="n">ask_if_exists</span>
+            <span class="ow">and</span> <span class="nb">input</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Directory for sim &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; already exists in &#39;</span><span class="si">{</span><span class="n">outfolder_base</span><span class="si">}</span><span class="s2">&#39;. &quot;</span>
+                <span class="s2">&quot;Delete previous and create new? (yes/N) &quot;</span>
+            <span class="p">)</span>
+            <span class="o">!=</span> <span class="s2">&quot;yes&quot;</span>
+        <span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;aborting&quot;</span><span class="p">)</span>
+            <span class="n">exit</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">delete_existing</span><span class="p">:</span>
+            <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">folder_name</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;removed </span><span class="si">{</span><span class="n">folder_name</span><span class="si">}</span><span class="s2"> and all its contents&quot;</span><span class="p">)</span>
+
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">folder_name</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;outdir </span><span class="si">{</span><span class="n">folder_name</span><span class="si">}</span><span class="s2"> created&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">folder_name</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="swarmrl.utils.utils.setup_swarmrl_logger" class="doc doc-heading">
+          <code class=" language-python"><span class="n">setup_swarmrl_logger</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">loglevel_terminal</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span> <span class="n">loglevel_file</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span></code>
+
+<a href="#swarmrl.utils.utils.setup_swarmrl_logger" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Configure the swarmrl logger. This logger is used internally for logging,
+but you can also use it for your own log messages.
+Parameters</p>
+<hr />
+<p>filename
+    Name of the file where logs get written to
+loglevel_terminal
+    Loglevel of the terminal output. The values correspond to
+    https://docs.python.org/3/library/logging.html#logging-levels.
+    You can pass an integer (or logging predefined values such as logging.INFO)
+    or a string that corresponds to the loglevels of the link above.
+loglevel_file
+    Loglevel of the file output.
+Returns</p>
+<hr />
+<div class="codehilite"><pre><span></span><code>The logger
+</code></pre></div>
+
+          <details class="quote">
+            <summary>Source code in <code>swarmrl/utils/utils.py</code></summary>
+            <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">setup_swarmrl_logger</span><span class="p">(</span>
+    <span class="n">filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">loglevel_terminal</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span>
+    <span class="n">loglevel_file</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">logging</span><span class="o">.</span><span class="n">Logger</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Configure the swarmrl logger. This logger is used internally for logging,</span>
+<span class="sd">    but you can also use it for your own log messages.</span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    filename</span>
+<span class="sd">        Name of the file where logs get written to</span>
+<span class="sd">    loglevel_terminal</span>
+<span class="sd">        Loglevel of the terminal output. The values correspond to</span>
+<span class="sd">        https://docs.python.org/3/library/logging.html#logging-levels.</span>
+<span class="sd">        You can pass an integer (or logging predefined values such as logging.INFO)</span>
+<span class="sd">        or a string that corresponds to the loglevels of the link above.</span>
+<span class="sd">    loglevel_file</span>
+<span class="sd">        Loglevel of the file output.</span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">        The logger</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">get_numeric_level</span><span class="p">(</span><span class="n">loglevel</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">loglevel</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">numeric_level</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">logging</span><span class="p">,</span> <span class="n">loglevel</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">loglevel</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="n">numeric_level</span> <span class="o">=</span> <span class="n">loglevel</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Invalid log level: </span><span class="si">{</span><span class="n">loglevel</span><span class="si">}</span><span class="s2">. Must be either str or int&quot;</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">numeric_level</span>
+
+    <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">swarmrl</span><span class="o">.</span><span class="n">_ROOT_NAME</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+    <span class="n">formatter</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span>
+        <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;[</span><span class="si">%(levelname)-10s</span><span class="s2">] </span><span class="si">%(asctime)s</span><span class="s2"> </span><span class="si">%(message)s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">datefmt</span><span class="o">=</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span>
+    <span class="p">)</span>
+    <span class="n">file_handler</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">FileHandler</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+    <span class="n">file_handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
+    <span class="n">file_handler</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">get_numeric_level</span><span class="p">(</span><span class="n">loglevel_file</span><span class="p">))</span>
+    <span class="n">stream_handler</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">()</span>
+    <span class="n">stream_handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
+    <span class="n">stream_handler</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">get_numeric_level</span><span class="p">(</span><span class="n">loglevel_terminal</span><span class="p">))</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">file_handler</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">stream_handler</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">logger</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="swarmrl.utils.utils.write_params" class="doc doc-heading">
+          <code class=" language-python"><span class="n">write_params</span><span class="p">(</span><span class="n">folder_name</span><span class="p">,</span> <span class="n">sim_name</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">write_espresso_version</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+
+<a href="#swarmrl.utils.utils.write_params" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Writes parameters human-readable and to pickle</p>
+<h4 id="swarmrl.utils.utils.write_params--parameters">Parameters<a class="headerlink" href="#swarmrl.utils.utils.write_params--parameters" title="Permanent link">&para;</a></h4>
+<p>folder_name
+    Folder to save to
+sim_name
+    Name of the simulation, used to create the two file names
+params : dict
+    The parameters to be saved. Should have a string representation for txt output
+     and be serializable by pickle
+write_espresso_version : bool
+    If True, the espresso version will be printed to the txt file</p>
+
+          <details class="quote">
+            <summary>Source code in <code>swarmrl/utils/utils.py</code></summary>
+            <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">write_params</span><span class="p">(</span>
+    <span class="n">folder_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">sim_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">params</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">,</span>
+    <span class="n">write_espresso_version</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Writes parameters human-readable and to pickle</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    folder_name</span>
+<span class="sd">        Folder to save to</span>
+<span class="sd">    sim_name</span>
+<span class="sd">        Name of the simulation, used to create the two file names</span>
+<span class="sd">    params : dict</span>
+<span class="sd">        The parameters to be saved. Should have a string representation for txt output</span>
+<span class="sd">         and be serializable by pickle</span>
+<span class="sd">    write_espresso_version : bool</span>
+<span class="sd">        If True, the espresso version will be printed to the txt file</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">fname_base</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">folder_name</span><span class="si">}</span><span class="s2">/params_</span><span class="si">{</span><span class="n">sim_name</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname_base</span> <span class="o">+</span> <span class="s2">&quot;.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">txt_file</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">write_espresso_version</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">espressomd</span> <span class="kn">import</span> <span class="n">version</span>
+
+            <span class="n">txt_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Espresso version </span><span class="si">{</span><span class="n">version</span><span class="o">.</span><span class="n">friendly</span><span class="p">()</span><span class="si">}</span><span class="s2"> branch </span><span class="si">{</span><span class="n">version</span><span class="o">.</span><span class="n">git_branch</span><span class="p">()</span><span class="si">}</span><span class="s2"> &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;at commit </span><span class="si">{</span><span class="n">version</span><span class="o">.</span><span class="n">git_commit</span><span class="p">()</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+        <span class="n">txt_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname_base</span> <span class="o">+</span> <span class="s2">&quot;.pick&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">pick_file</span><span class="p">:</span>
+        <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">pick_file</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.instant", "navigation.top"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      
+    
+  </body>
+</html>
